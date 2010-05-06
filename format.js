@@ -8,26 +8,30 @@
 
 var sys = require('sys');
 
+function $args(args) {
+    return Array.prototype.slice.call(args);
+}
+
 exports.extendNativeStrings = function() {
     String.prototype.printf = function(/* ... */) {
-        var args = Array.prototype.slice.call(arguments);
-        args.unshift(this);
+        var args = $args(arguments);
+        if (args[0] !== this) args.unshift(this);
         sys.puts(exports.format.apply(this, args));
     };
     String.prototype.format = function(/* ... */) {
-        var args = Array.prototype.slice.call(arguments);
+        var args = $args(arguments);
         if (args[0] !== this) args.unshift(this);
-        exports.format.apply(this, args);
+        return exports.format.apply(this, args);
     };
 };
 
 exports.printf = function(/* ... */) {
-    sys.puts(exports.format.apply(this, Array.prototype.slice.call(arguments)));
+    sys.puts(exports.format.apply(this, arguments));
 };
 
 exports.format = function(format) {
     var argIndex = 1 // skip initial format argument
-      , args = Array.prototype.slice.call(arguments)
+      , args = $args(arguments)
       , i = 0
       , n = format.length
       , result = ''
