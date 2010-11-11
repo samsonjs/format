@@ -6,32 +6,27 @@
 // ISC license
 //
 
-var sys = require('sys');
-
-function $args(args) {
-    return Array.prototype.slice.call(args);
-}
-
 exports.extendNativeStrings = function() {
     String.prototype.printf = function(/* ... */) {
-        var args = $args(arguments);
+        var args = [].slice.call(arguments);
         if (args[0] !== this) args.unshift(this);
-        sys.puts(exports.format.apply(this, args));
+        console.log(exports.format.apply(this, args));
     };
     String.prototype.format = function(/* ... */) {
-        var args = $args(arguments);
+        var args = [].slice.call(arguments);
         if (args[0] !== this) args.unshift(this);
         return exports.format.apply(this, args);
     };
 };
 
 exports.printf = function(/* ... */) {
-    sys.puts(exports.format.apply(this, arguments));
+    console.log(exports.format.apply(this, arguments));
 };
 
+exports.sprintf = exports.format
 exports.format = function(format) {
     var argIndex = 1 // skip initial format argument
-      , args = $args(arguments)
+      , args = [].slice.call(arguments)
       , i = 0
       , n = format.length
       , result = ''
