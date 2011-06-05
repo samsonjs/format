@@ -1,7 +1,7 @@
 format
 ======
 
-printf and sprintf for JavaScript
+printf, sprintf, and vsprintf for JavaScript
 
 
 Installation
@@ -9,6 +9,8 @@ Installation
 
 npm install format
 
+The code works in browsers as well, you can copy these functions into your project
+or otherwise include them with your other JavaScript.
 
 Usage
 =====
@@ -32,6 +34,6 @@ See `man 3 printf` or `man 1 printf` for details.
 License
 =======
 
-Copyright 2010 Sami Samhuri sami.samhuri@gmail.com
+Copyright 2010 - 2011 Sami Samhuri sami@samhuri.net
 
-MIT (see included [LICENSE](/samsonjs/format/blob/master/LICENSE))
+ISC (see included [LICENSE](/samsonjs/format/blob/master/LICENSE))
