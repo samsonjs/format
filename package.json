@@ -13,7 +13,7 @@
   }
 , "directories" : { "lib" : "./lib" }
 , "main" : "./lib/index"
-, "engines" : { "node" : "0.4.x || 0.5.x" }
+, "engines" : { "node" : "0.4.x - 0.6.x" }
 , "licenses" :
   [ { "type" : "MIT"
     , "url" : "http://github.com/samsonjs/format/raw/master/LICENSE"
