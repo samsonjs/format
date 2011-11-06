@@ -17,7 +17,7 @@
   },
   "main": "./lib/index",
   "engines": {
-    "node": "0.4.x - 0.6.x"
+    "node": ">=0.4.x"
   },
   "licenses": [
     {
