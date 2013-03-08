@@ -41,4 +41,4 @@ License
 
 Copyright 2010 - 2013 Sami Samhuri sami@samhuri.net
 
-ISC (like MIT) (see included [LICENSE](/samsonjs/format/blob/master/LICENSE))
+ISC (like MIT) (see included [LICENSE](LICENSE))
