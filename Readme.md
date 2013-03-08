@@ -41,4 +41,5 @@ License
 
 Copyright 2010 - 2013 Sami Samhuri sami@samhuri.net
 
-ISC (like MIT) (see included [LICENSE](LICENSE))
+[MIT license](http://sjs.mit-license.org)
+

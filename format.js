@@ -1,9 +1,12 @@
 //
-// format, printf-like string formatting for JavaScript
+// format - printf-like string formatting for JavaScript
 // github.com/samsonjs/format
+// @_sjs
 //
 // Copyright 2010 - 2013 Sami Samhuri <sami@samhuri.net>
-// ISC license
+//
+// MIT License
+// http://sjs.mit-license.org
 //
 
 ;(function() {
