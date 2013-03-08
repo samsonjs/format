@@ -8,6 +8,6 @@ test:
 	node test_format.js
 
 test-minified:
-	node test_format.js format-min.js
+	node test_format.js ./format-min.js
 
 .PHONY: test test-minified
