@@ -1,4 +1,5 @@
-var format = require('./lib')
+var filename = process.argv[2] || './format.js'
+  , format = require(filename)
   , printf = format.printf
   ;
 
