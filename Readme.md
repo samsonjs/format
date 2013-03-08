@@ -15,15 +15,20 @@ or otherwise include them with your other JavaScript.
 Usage
 =====
 
-    var Format = require('format')
-      , printf = Format.printf
-      , format = Format.format // aliased as sprintf as well
+    var format = require('format')
+      , printf = format.printf
+      , vsprintf = format.vsprintf
+      // or if you want to keep it old school
+      , sprintf = format
 
     // Print 'hello world'
     printf('%s world', 'hello')
 
     var what = 'life, the universe, and everything'
     format('%d is the answer to %s', 42, what)
+    // => '42 is the answer to life, the universe, and everything'
+
+    vsprintf('%d is the answer to %s', [42, what])
     // => '42 is the answer to life, the universe, and everything'
 
 Supported format specifiers: b, c, d, f, o, s, x, and X.
@@ -34,6 +39,6 @@ See `man 3 printf` or `man 1 printf` for details.
 License
 =======
 
-Copyright 2010 - 2011 Sami Samhuri sami@samhuri.net
+Copyright 2010 - 2013 Sami Samhuri sami@samhuri.net
 
-ISC (see included [LICENSE](/samsonjs/format/blob/master/LICENSE))
+ISC (like MIT) (see included [LICENSE](/samsonjs/format/blob/master/LICENSE))
