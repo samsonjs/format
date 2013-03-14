@@ -12,14 +12,14 @@
     "email": "sami@samhuri.net",
     "url": "https://github.com/samsonjs/format/issues"
   },
-  "main": "./format",
+  "main": "./format.js",
   "engines": {
     "node": ">=0.4.x"
   },
   "licenses": [
     {
-      "type": "ISC",
-      "url": "http://github.com/samsonjs/format/raw/master/LICENSE"
+      "type": "MIT",
+      "url": "http://sjs.mit-license.org"
     }
   ],
   "dependencies": {},
