@@ -37,7 +37,10 @@
   }
 
   function vsprintf(fmt, replacements) {
-    return format.apply(null, [fmt].concat(replacements));
+    if (!(replacements instanceof Array)) {
+      replacements = [].slice.call(arguments, 1);
+    }
+    return format.apply(null, [fmt].concat(replacements))
   }
 
   function format(fmt) {

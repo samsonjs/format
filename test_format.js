@@ -22,4 +22,15 @@ assertEqual(format.format('hello %s', 'sami'), 'hello sami');
 assertEqual(format.format('b: %b\nc: %c\nd: %d\nf: %f\no: %o\ns: %s\nx: %x\nX: %X', 42, 65, 42*42, 42*42*42/1000000000, 255, 'sami', 0xfeedface, 0xc0ffee), "b: 101010\nc: A\nd: 1764\nf: 0.000074\no: 0377\ns: sami\nx: 0xfeedface\nX: 0xC0FFEE");
 console.log('(pass)');
 
+console.log('Testing vsprintf (replacements as array):');
+assertEqual(format.vsprintf('hello'), 'hello');
+assertEqual(format.vsprintf('hello %s', ['sami']), 'hello sami');
+assertEqual(format.vsprintf('b: %b\nc: %c\nd: %d\nf: %f\no: %o\ns: %s\nx: %x\nX: %X', [42, 65, 42*42, 42*42*42/1000000000, 255, 'sami', 0xfeedface, 0xc0ffee]), "b: 101010\nc: A\nd: 1764\nf: 0.000074\no: 0377\ns: sami\nx: 0xfeedface\nX: 0xC0FFEE");
+console.log('(pass)');
+
+console.log('Testing vsprintf (replacements as variable arg list)');
+assertEqual(format.vsprintf('hello %s', 'sami'), 'hello sami');
+assertEqual(format.vsprintf('b: %b\nc: %c\nd: %d\nf: %f\no: %o\ns: %s\nx: %x\nX: %X', 42, 65, 42*42, 42*42*42/1000000000, 255, 'sami', 0xfeedface, 0xc0ffee), "b: 101010\nc: A\nd: 1764\nf: 0.000074\no: 0377\ns: sami\nx: 0xfeedface\nX: 0xC0FFEE");
+console.log('(pass)');
+
 console.log('all passed');
