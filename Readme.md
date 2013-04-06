@@ -31,6 +31,9 @@ Usage
     vsprintf('%d is the answer to %s', [42, what])
     // => '42 is the answer to life, the universe, and everything'
 
+    vsprintf('%d is the answer to %s', 42, what)
+    // => '42 is the answer to life, the universe, and everything'
+
 Supported format specifiers: b, c, d, f, o, s, x, and X.
 
 See `man 3 printf` or `man 1 printf` for details.
