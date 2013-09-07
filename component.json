@@ -3,7 +3,7 @@
   "repo": "samsonjs/format",
   "description": "printf, sprintf, and vsprintf for JavaScript",
   "keywords": ["format", "printf", "sprintf", "vsprintf", "string"],
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "format.js",
   "scripts": ["format.js"]
 }
