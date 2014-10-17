@@ -49,12 +49,16 @@
       , c
       , escaped = false
       , arg
+      , tmp
+      , leadingZero = false
       , precision
       , nextArg = function() { return args[argIndex++]; }
       , slurpNumber = function() {
           var digits = '';
-          while (fmt[i].match(/\d/))
+          while (/\d/.test(fmt[i])) {
             digits += fmt[i++];
+            c = fmt[i];
+          }
           return digits.length > 0 ? parseInt(digits) : null;
         }
       ;
@@ -62,6 +66,18 @@
       c = fmt[i];
       if (escaped) {
         escaped = false;
+        if (c == '.') {
+          leadingZero = false;
+          c = fmt[++i];
+        }
+        else if (c == '0' && fmt[i + 1] == '.') {
+          leadingZero = true;
+          i += 2;
+          c = fmt[i];
+        }
+        else {
+          leadingZero = true;
+        }
         precision = slurpNumber();
         switch (c) {
         case 'b': // number in binary
@@ -78,7 +94,8 @@
           result += parseInt(nextArg(), 10);
           break;
         case 'f': // floating point number
-          result += parseFloat(nextArg()).toFixed(precision || 6);
+          tmp = String(parseFloat(nextArg()).toFixed(precision || 6));
+          result += leadingZero ? tmp : tmp.replace(/^0/, '');
           break;
         case 'o': // number in octal
           result += '0' + parseInt(nextArg(), 10).toString(8);

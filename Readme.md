@@ -35,11 +35,12 @@ Supported format specifiers: b, c, d, f, o, s, x, and X.
 
 See `man 3 printf` or `man 1 printf` for details.
 
+Precision is supported for floating point numbers.
 
 License
 =======
 
-Copyright 2010 - 2013 Sami Samhuri sami@samhuri.net
+Copyright 2010 - 2014 Sami Samhuri sami@samhuri.net
 
 [MIT license](http://sjs.mit-license.org)
 
