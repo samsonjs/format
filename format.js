@@ -97,6 +97,9 @@
           tmp = String(parseFloat(nextArg()).toFixed(precision || 6));
           result += leadingZero ? tmp : tmp.replace(/^0/, '');
           break;
+        case 'j': // JSON
+          result += JSON.stringify(nextArg());
+          break;
         case 'o': // number in octal
           result += '0' + parseInt(nextArg(), 10).toString(8);
           break;
