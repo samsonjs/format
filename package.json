@@ -8,6 +8,11 @@
     "type": "git",
     "url": "git://github.com/samsonjs/format.git"
   },
+  "scripts": {
+    "build": "google-closure-compiler --compilation_level SIMPLE --js format.js --js_output_file format-min.js",
+    "test": "node --test test_format.js",
+    "test-min": "node test_format.js ./format-min.js"
+  },
   "bugs": {
     "email": "sami@samhuri.net",
     "url": "https://github.com/samsonjs/format/issues"
@@ -16,12 +21,8 @@
   "engines": {
     "node": ">=0.4.x"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://sjs.mit-license.org"
-    }
-  ],
-  "dependencies": {},
-  "devDependencies": {}
+  "license": "MIT",
+  "devDependencies": {
+    "google-closure-compiler": "^20260930.0.0"
+  }
 }

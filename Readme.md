@@ -8,34 +8,36 @@ printf, sprintf, and vsprintf for JavaScript
 Installation
 ============
 
-npm install format
+`npm install format`
 
 The code works in browsers as well, you can copy these functions into your project
 or otherwise include them with your other JavaScript.
 
 Usage
 =====
+```js
+const format = require('format')
+const { printf, vsprintf } = format
+// or if you want to keep it old school
+const sprintf = format
 
-    var format = require('format')
-      , printf = format.printf
-      , vsprintf = format.vsprintf
-      // or if you want to keep it old school
-      , sprintf = format
+// Print 'hello world'
+printf('%s world', 'hello')
 
-    // Print 'hello world'
-    printf('%s world', 'hello')
+const what = 'life, the universe, and everything'
+const out = format('%d is the answer to %s', 42, what)
+console.log(out)
+// => '42 is the answer to life, the universe, and everything'
 
-    var what = 'life, the universe, and everything'
-    format('%d is the answer to %s', 42, what)
-    // => '42 is the answer to life, the universe, and everything'
+vsprintf('%d is the answer to %s', [42, what])
+// => '42 is the answer to life, the universe, and everything'
 
-    vsprintf('%d is the answer to %s', [42, what])
-    // => '42 is the answer to life, the universe, and everything'
-
-    // you can format values as JSON with %j
-    var value = {answer: 42}
-    format('%j', value)
-    // => '{"answer":42}'
+// you can format values as JSON with %j
+const value = { answer: 42 }
+const out2 = format('%j', value)
+console.log(out2)
+// => '{"answer":42}'
+```
 
 Supported format specifiers: b, c, d, f, j, o, s, x, and X.
 
@@ -46,7 +48,6 @@ Precision is supported for floating point numbers.
 License
 =======
 
-Copyright 2010 - 2016 Sami Samhuri sami@samhuri.net
+Copyright 2010 - 2026 Sami Samhuri sami@samhuri.net
 
 [MIT license](http://sjs.mit-license.org)
-
