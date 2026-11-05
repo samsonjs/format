@@ -21,12 +21,19 @@
   },
   "main": "./builds/format.cjs",
   "module": "./src/format.js",
+  "types": "./types/types.d.ts",
   "unpkg": "./builds/format.min.js",
   "jsdelivr": "./builds/format.min.js",
   "exports": {
     ".": {
-      "import": "./src/format.js",
-      "require": "./builds/format.cjs",
+      "import": {
+        "types": "./types/types.d.ts",
+        "default": "./src/format.js"
+      },
+      "require": {
+        "types": "./types/types.d.cts",
+        "default": "./builds/format.cjs"
+      },
       "default": "./src/format.js"
     },
     "./builds/*": "./builds/*",
@@ -35,7 +42,8 @@
   },
   "files": [
     "builds",
-    "src"
+    "src",
+    "types"
   ],
   "engines": {
     "node": ">=18"
