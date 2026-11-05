@@ -25,7 +25,7 @@ function format(fmt) {
       return args[argIndex++]
     },
     slurpNumber = function () {
-      var digits = ''
+      let digits = ''
       while (/\d/.test(fmt[i])) {
         digits += fmt[i++]
         c = fmt[i]
@@ -60,8 +60,8 @@ function format(fmt) {
           result += parseInt(nextArg(), 10)
           break
         case 'f': // floating point number
-          tmp = String(parseFloat(nextArg()).toFixed(precision || 6))
-          result += leadingZero ? tmp : tmp.replace(/^0/, '')
+          tmp = parseFloat(nextArg()).toFixed(precision ?? 6)
+          result += leadingZero ? tmp : tmp.replace(/^0\./, '.')
           break
         case 'j': // JSON
           result += JSON.stringify(nextArg())
