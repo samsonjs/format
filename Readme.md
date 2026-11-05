@@ -15,8 +15,9 @@ or otherwise include them with your other JavaScript.
 
 Usage
 =====
+
 ```js
-const format = require('format')
+import format from 'format'
 const { printf, vsprintf } = format
 // or if you want to keep it old school
 const sprintf = format
