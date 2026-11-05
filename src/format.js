@@ -60,7 +60,7 @@ function format(fmt) {
           result += parseInt(nextArg(), 10)
           break
         case 'f': // floating point number
-          tmp = parseFloat(nextArg()).toFixed(precision ?? 6)
+          tmp = parseFloat(nextArg()).toFixed(precision === null ? 6 : precision)
           result += leadingZero ? tmp : tmp.replace(/^0\./, '.')
           break
         case 'j': // JSON

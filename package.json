@@ -46,7 +46,7 @@
     "types"
   ],
   "engines": {
-    "node": ">=18"
+    "node": "^12.20.0 || >=14.13.0"
   },
   "license": "MIT",
   "devDependencies": {

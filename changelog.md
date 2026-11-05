@@ -4,6 +4,7 @@
 - **[change]** - use rollup over closure-compiler for building
 - **[change]** - support commonjs/esmodules
 - **[change]** - use native node test-runner
+- **[change]** - explicit node>=12 (2019) requirement
 - **[new]** - typescript support
 
 ### 0.2.2 [Dec 2021]
