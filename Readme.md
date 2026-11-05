@@ -3,7 +3,7 @@ format
 
 printf, sprintf, and vsprintf for JavaScript
 
-[![version on npm](https://img.shields.io/npm/v/format.svg?style=flat-square)](https://www.npmjs.com/package/format) [![node version 0.4 and up](https://img.shields.io/badge/node->=0.4-brightgreen.svg?style=flat)](https://www.npmjs.com/package/format) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://sjs.mit-license.org)
+[![version on npm](https://img.shields.io/npm/v/format.svg?style=flat-square)](https://www.npmjs.com/package/format) [![node version 0.4 and up](https://img.shields.io/badge/node->=12-brightgreen.svg?style=flat)](https://www.npmjs.com/package/format) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://sjs.mit-license.org)
 
 Installation
 ============
