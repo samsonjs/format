@@ -1,11 +1,10 @@
-### 0.3.0 [Nov 2026]
+### 1.0.0 [Nov 2026]
 
 - **[fix]** - format('%.0f', 1.6) → "1.600000" now "2"
 - **[change]** - use rollup over closure-compiler for building
 - **[change]** - support commonjs/esmodules
 - **[change]** - use native node test-runner
 - **[change]** - explicit node>=12 (2019) requirement
-- **[change]** - the browser build only defines a `format` global, so use `format.printf` and `format.vsprintf` instead of the old `printf` and `vsprintf` globals
 - **[change]** - `format.js` and `format-min.js` are gone, and deep imports are no longer exported: use `require('format')` or `import format from 'format'`, or `builds/format.min.js` in a browser
 - **[new]** - typescript support
 
