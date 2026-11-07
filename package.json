@@ -1,28 +1,56 @@
 {
   "name": "format",
   "description": "printf, sprintf, and vsprintf for JavaScript",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "homepage": "https://samhuri.net/projects/format",
   "author": "Sami Samhuri <sami@samhuri.net>",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git://github.com/samsonjs/format.git"
   },
   "scripts": {
-    "build": "google-closure-compiler --compilation_level SIMPLE --js format.js --js_output_file format-min.js",
+    "build": "rollup -c --silent",
+    "prepack": "npm run build",
     "test": "node --test test_format.js",
-    "test-min": "node test_format.js ./format-min.js"
+    "test-min": "FORMAT_TEST_MIN=1 node --test test_format.js"
   },
   "bugs": {
     "email": "sami@samhuri.net",
     "url": "https://github.com/samsonjs/format/issues"
   },
-  "main": "./format.js",
+  "main": "./builds/format.cjs",
+  "module": "./src/format.js",
+  "types": "./types/types.d.ts",
+  "unpkg": "./builds/format.min.js",
+  "jsdelivr": "./builds/format.min.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/types.d.ts",
+        "default": "./src/format.js"
+      },
+      "require": {
+        "types": "./types/types.d.cts",
+        "default": "./builds/format.cjs"
+      },
+      "default": "./src/format.js"
+    },
+    "./builds/*": "./builds/*",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "builds",
+    "src",
+    "types"
+  ],
   "engines": {
-    "node": ">=0.4.x"
+    "node": "^12.20.0 || >=14.13.0"
   },
   "license": "MIT",
   "devDependencies": {
-    "google-closure-compiler": "^20260930.0.0"
+    "@rollup/plugin-terser": "1.0.2",
+    "rollup": "4.67.4"
   }
 }
