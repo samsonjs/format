@@ -27,7 +27,7 @@ jobs:
         env:
           TAG: ${{ github.event.release.tag_name }}
         run: test "$TAG" = "$(node -p "require('./package.json').version")"
-      - run: npm install --no-audit --no-fund
+      - run: npm ci --no-audit --no-fund
       - run: npm test
       - run: npm run build
       - run: npm run test-min
