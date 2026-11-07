@@ -10,14 +10,19 @@ Installation
 
 `npm install format`
 
-The code works in browsers as well, you can copy these functions into your project
-or otherwise include them with your other JavaScript.
+In a browser without a bundler, load the minified build with a script tag. It defines `format`, `printf`, and `vsprintf` as globals.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/format@1/builds/format.min.js"></script>
+```
 
 Usage
 =====
 
 ```js
 import format from 'format'
+// or with CommonJS
+// const format = require('format')
 const { printf, vsprintf } = format
 // or if you want to keep it old school
 const sprintf = format
