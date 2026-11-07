@@ -1,7 +1,7 @@
 {
   "name": "format",
   "description": "printf, sprintf, and vsprintf for JavaScript",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "homepage": "https://samhuri.net/projects/format",
   "author": "Sami Samhuri <sami@samhuri.net>",
   "type": "module",
