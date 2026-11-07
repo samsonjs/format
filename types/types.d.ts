@@ -1,3 +1,3 @@
-import format = require('./types.cjs')
+import format = require('./types.cjs');
 
-export default format
+export default format;
