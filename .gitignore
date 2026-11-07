@@ -1,2 +1,4 @@
-*.tmproj
 node_modules
+builds
+package-lock.json
+
