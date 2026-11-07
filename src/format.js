@@ -1,12 +1,12 @@
 //
 // format - printf-like string formatting for JavaScript
 // github.com/samsonjs/format
-// @_sjs
+// https://samhuri.net
 //
 // Copyright 2010 - 2026 Sami Samhuri <sami@samhuri.net>
 //
 // MIT License
-// http://sjs.mit-license.org
+// https://sjs.mit-license.org
 //
 
 function format(fmt) {
