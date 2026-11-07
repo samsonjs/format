@@ -1,3 +1,8 @@
+### 1.0.1 [Nov 2026]
+
+- **[update]** - published from GitHub Actions with npm provenance
+- **[fix]** - repository URL in package.json
+
 ### 1.0.0 [Nov 2026]
 
 - **[fix]** - format('%.0f', 1.6) → "1.600000" now "2"
