@@ -56,4 +56,4 @@ License
 
 Copyright 2010 - 2026 Sami Samhuri sami@samhuri.net
 
-[MIT license](http://sjs.mit-license.org)
+[MIT license](https://sjs.mit-license.org)
