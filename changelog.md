@@ -7,10 +7,10 @@
 - **[change]** - explicit node>=12 (2019) requirement
 - **[change]** - `format.js` and `format-min.js` are gone, and deep imports are no longer exported: use `require('format')` or `import format from 'format'`, or `builds/format.min.js` in a browser
 - **[new]** - typescript support
-
-### 0.2.2 [Dec 2021]
-
 - **[update]** - project links, readme and licence
+
+### 0.2.2 [Jan 2016]
+
 - **[change]** - add JSON support (%j)
 
 ### 0.2.1 [Sep 2013]
