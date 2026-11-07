@@ -20,28 +20,28 @@ Usage
 =====
 
 ```js
-import format from 'format'
+import format from 'format';
 // or with CommonJS
-// const format = require('format')
-const { printf, vsprintf } = format
+// const format = require('format');
+const { printf, vsprintf } = format;
 // or if you want to keep it old school
-const sprintf = format
+const sprintf = format;
 
 // Print 'hello world'
-printf('%s world', 'hello')
+printf('%s world', 'hello');
 
-const what = 'life, the universe, and everything'
-const out = format('%d is the answer to %s', 42, what)
-console.log(out)
+const what = 'life, the universe, and everything';
+const out = format('%d is the answer to %s', 42, what);
+console.log(out);
 // => '42 is the answer to life, the universe, and everything'
 
-vsprintf('%d is the answer to %s', [42, what])
+vsprintf('%d is the answer to %s', [42, what]);
 // => '42 is the answer to life, the universe, and everything'
 
 // you can format values as JSON with %j
-const value = { answer: 42 }
-const out2 = format('%j', value)
-console.log(out2)
+const value = { answer: 42 };
+const out2 = format('%j', value);
+console.log(out2);
 // => '{"answer":42}'
 ```
 

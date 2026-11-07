@@ -1,4 +1,4 @@
-import terser from '@rollup/plugin-terser'
+import terser from '@rollup/plugin-terser';
 
 export default {
   input: 'src/format.js',
@@ -19,4 +19,4 @@ export default {
         '(function(g){g.format&&g.format.vsprintf&&(g.printf=g.format.printf,g.vsprintf=g.format.vsprintf)})(typeof globalThis!="undefined"?globalThis:self);'
     }
   ]
-}
+};

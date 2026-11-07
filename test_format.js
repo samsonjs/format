@@ -1,20 +1,20 @@
-import assert from 'node:assert/strict'
-import { readFile } from 'node:fs/promises'
-import test from 'node:test'
-import vm from 'node:vm'
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import test from 'node:test';
+import vm from 'node:vm';
 
-const testMin = process.env.FORMAT_TEST_MIN === '1'
-const filename = testMin ? './builds/format.cjs' : './src/format.js'
-const { default: format } = await import(filename)
+const testMin = process.env.FORMAT_TEST_MIN === '1';
+const filename = testMin ? './builds/format.cjs' : './src/format.js';
+const { default: format } = await import(filename);
 
 if (testMin) {
   test('the browser build defines format, printf and vsprintf globals', async () => {
-    const context = vm.createContext({})
-    vm.runInContext(await readFile(new URL('./builds/format.min.js', import.meta.url), 'utf8'), context)
-    assert.equal(vm.runInContext('format("%s %d", "hello", 42)', context), 'hello 42')
-    assert.equal(vm.runInContext('vsprintf("%s %d", ["hello", 42])', context), 'hello 42')
-    assert.equal(vm.runInContext('typeof printf', context), 'function')
-  })
+    const context = vm.createContext({});
+    vm.runInContext(await readFile(new URL('./builds/format.min.js', import.meta.url), 'utf8'), context);
+    assert.equal(vm.runInContext('format("%s %d", "hello", 42)', context), 'hello 42');
+    assert.equal(vm.runInContext('vsprintf("%s %d", ["hello", 42])', context), 'hello 42');
+    assert.equal(vm.runInContext('typeof printf', context), 'function');
+  });
 }
 
 const tests = [
@@ -49,10 +49,10 @@ const tests = [
   [['%0f', 0.25], '0.250000'],
   [['foo %j', 42], 'foo 42'],
   [['foo %j', '42'], 'foo "42"']
-]
+];
 
 tests.forEach(([args, expected]) => {
   test(`format(${args.map(arg => JSON.stringify(arg)).join(', ')})`, () => {
-    assert.equal(format(...args), expected)
-  })
-})
+    assert.equal(format(...args), expected);
+  });
+});
