@@ -20,6 +20,7 @@ function format(fmt) {
     arg,
     tmp,
     leadingZero = false,
+    hasDot,
     precision,
     nextArg = function () {
       return args[argIndex++]
@@ -36,6 +37,7 @@ function format(fmt) {
     c = fmt[i]
     if (escaped) {
       escaped = false
+      hasDot = true
       if (c == '.') {
         leadingZero = false
         c = fmt[++i]
@@ -45,8 +47,11 @@ function format(fmt) {
         c = fmt[i]
       } else {
         leadingZero = true
+        hasDot = false
       }
       precision = slurpNumber()
+      // Without a dot, a 0 is printf's zero-padding flag, not a precision.
+      if (!hasDot && precision === 0) precision = null
       switch (c) {
         case 'b': // number in binary
           result += parseInt(nextArg(), 10).toString(2)
