@@ -6,3 +6,11 @@ updates:
       interval: monthly
       time: "06:00"
       timezone: America/Los_Angeles
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: monthly
+      time: "06:00"
+      timezone: America/Los_Angeles
+    cooldown:
+      default-days: 7
