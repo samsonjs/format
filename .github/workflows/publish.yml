@@ -31,4 +31,4 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: npm run test-min
-      - run: npm publish
+      - run: npm stage publish
