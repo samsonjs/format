@@ -1,8 +1,21 @@
 import assert from 'node:assert/strict'
+import { readFile } from 'node:fs/promises'
 import test from 'node:test'
+import vm from 'node:vm'
 
-const filename = process.env.FORMAT_TEST_MIN === '1' ? './builds/format.cjs' : './src/format.js'
+const testMin = process.env.FORMAT_TEST_MIN === '1'
+const filename = testMin ? './builds/format.cjs' : './src/format.js'
 const { default: format } = await import(filename)
+
+if (testMin) {
+  test('the browser build defines format, printf and vsprintf globals', async () => {
+    const context = vm.createContext({})
+    vm.runInContext(await readFile(new URL('./builds/format.min.js', import.meta.url), 'utf8'), context)
+    assert.equal(vm.runInContext('format("%s %d", "hello", 42)', context), 'hello 42')
+    assert.equal(vm.runInContext('vsprintf("%s %d", ["hello", 42])', context), 'hello 42')
+    assert.equal(vm.runInContext('typeof printf', context), 'function')
+  })
+}
 
 const tests = [
   [['hello'], 'hello'],
